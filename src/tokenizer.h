@@ -27,6 +27,9 @@ int count_words(char *str);
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len);
 
+/* Return String length  */
+int str_length(char *str);
+
 /* Returns a freshly allocated zero-terminated vector of freshly allocated 
    space-separated tokens from zero-terminated str.
 
@@ -43,5 +46,7 @@ void print_tokens(char **tokens);
 
 /* Frees all tokens and the vector containing themx. */
 void free_tokens(char **tokens);
+
+
 
 #endif

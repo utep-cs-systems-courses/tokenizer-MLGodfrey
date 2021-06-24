@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tokenizer.h"
+#include "malloc.h"
 
 int space_char(char c){
   if (c == '\t' || c == ' '){
@@ -35,5 +36,22 @@ char *word_terminator(char *word){
 //int count_words(char *str){
 //int word_count =0;
 //while(space_char){
-    
-//}
+
+int str_length(char *str){
+  int count;
+  for(count=0; *str != '\0'; str++){
+    count++;
+  }
+  return count;
+}
+
+char *copy_str(char *inStr, short len){
+  char *new_str = (char*)malloc(sizeof(char)*len);
+  while (*inStr != '\0'){
+    *new_str = *inStr;
+    new_str++;
+    inStr++;
+  }
+  new_str-=len;
+  return new_str;
+}
